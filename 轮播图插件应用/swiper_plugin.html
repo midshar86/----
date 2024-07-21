@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./swiper_plugin.css">
+    <style>
+        .root {
+            width: 50%;
+            height: 500px;
+            margin: 80px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .clickbtn {
+            transform: translateY(-50%);
+            margin-top: 0;
+            height: 100%;
+        }
+
+        .clickbtn:hover {
+            background-color: rgba(255, 255, 255, .4);
+        }
+
+        .clickbtn:hover:active {
+            color: orangered;
+        }
+
+        .swiper-button-prev {
+            left: 0;
+        }
+
+        .swiper-button-next {
+            right: 0;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #f10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <div class="swiper-wrapper">
+            <img src="./imgs/pic (1).jpg" alt="" class="swiper-slide">
+            <img src="./imgs/pic (2).jpg" alt="" class="swiper-slide">
+            <img src="./imgs/pic (3).jpg" alt="" class="swiper-slide">
+            <img src="./imgs/pic (4).jpg" alt="" class="swiper-slide">
+            <img src="./imgs/pic (5).jpg" alt="" class="swiper-slide">
+        </div>
+
+        <div class="swiper-button-prev clickbtn"></div>
+        <div class="swiper-button-next clickbtn"></div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+    <script src="./swiper_plugin.js"></script>
+    <script>
+        let res = new Swiper('.root', {
+            effect: 'cards',
+            loop: true,
+            // autoplay: {
+            //     delay: 1000,
+            //     pauseOnMouseEnter: true
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
+        })
+        console.log(res)
+        let {
+            bullets
+        } = res.pagination
+        console.log(bullets)
+        for (let i = 0; i < bullets.length; i++) {
+            bullets[i].addEventListener('mouseover', function () {
+                this.click()
+            })
+        }
+    </script>
+</body>
+
+</html>

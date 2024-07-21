@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>单文件上传</h1>
+    <form action="http://localhost:3000/user/file" method="post" enctype="multipart/form-data">
+        <input type="file" name="sFile">
+        <input type="submit" value="点击上传文件">
+    </form>
+    <h1>单字段多文件上传</h1>
+    <form id="form" action="http://localhost:3000/user/files" method="post" enctype="multipart/form-data">
+        <!-- 单字段多文件上传需要在input元素中添加multiple属性 -->
+        <input type="file" name="files" multiple>
+        <input id="btn" type="submit" value="点击上传文件">
+    </form>
+    <h1>多字段多文件上传</h1>
+    <form action="http://localhost:3000/user/fields" method="post" enctype="multipart/form-data">
+        <input type="file" name="file1">
+        <input type="file" name="file2">
+        <button>点击发送文件</button>
+    </form>
+
+    <script>
+        let btnEle = document.getElementById('btn')
+        let formEle = document.getElementById('form')
+
+        function handlerSendForm(e) {
+            let form_data = new FormData(formEle)
+            e.preventDefault();
+            let xhr = new XMLHttpRequest();
+            xhr.open('post', 'http://localhost:3000/user/files');
+            xhr.send(form_data);
+            xhr.onload = () => {
+                console.log(JSON.parse(xhr.responseText))
+            }
+        }
+
+        btnEle.addEventListener('click', handlerSendForm)
+    </script>
+</body>
+
+</html>

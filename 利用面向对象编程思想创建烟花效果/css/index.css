@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: black;
+  overflow: hidden;
+}
+div.firebox {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+}
+div.small{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+}

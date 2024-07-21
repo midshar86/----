@@ -1,0 +1,20 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+p{
+    margin: 30px;
+}
+p>button{
+    height: 35px;
+    width: 150px;
+    border: none;
+    background-color: aquamarine;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+    color: orange;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

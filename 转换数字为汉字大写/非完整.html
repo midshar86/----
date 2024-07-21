@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #root {
+            background: linear-gradient(to right, #009E00, #FFFF96);
+            box-shadow: 0 3px 5px green;
+        }
+
+        p {
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 50px;
+            background: linear-gradient(to top, #FCA5F1, #B5FFFF);
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 0.2em;
+        }
+
+        p>input {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #E2492F;
+            line-height: 20px;
+        }
+
+        p>button {
+            background-color: transparent;
+            border: 2px solid orange;
+            padding: 5px;
+            width: 40px;
+            margin: 0 10px;
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+            background-color: #00B7FF;
+        }
+
+        p>button:active {
+            color: black;
+        }
+
+        #root~div {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <p>请输入：<input type="text"><button id="btn">Sure</button></p>
+    </div>
+    <script>
+        let inputEle = document.querySelector('p>input')
+        let btnEle = document.getElementById('btn')
+
+        btnEle.addEventListener('click', handlerClick)
+
+        // 转换四位数为大写人民币
+        function switchNumToChineseBag(num) {
+            let bigNum = parseInt(num)
+            let smallNum = ((num - bigNum).toFixed(2) * 100).toString().padStart(2, 0).split('')
+
+            let res1 = switchInt(bigNum) + '圆'
+            // 如果输入的为整数
+            if (Number(smallNum[0]) === 0 && Number(smallNum[1] === 0)) {
+                return res1
+            }
+            let res2 = switchFloat(smallNum).split('')
+            res2 = res2[0] + '角' + res2[1] + '分'
+            return res1 + res2
+        }
+
+        // 转换整数部分
+        function switchInt(bigNum) {
+            let numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            let chiArray = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']
+
+            // 一位数
+            if (bigNum >= 0 && bigNum < 10) {
+                for (let i = 0; i < numArray.length; i++) {
+                    if (bigNum === numArray[i]) {
+                        return chiArray[i]
+                    }
+                }
+            } else if (bigNum >= 10 && bigNum < 1E2) { // 两位数
+                if (!(bigNum % 10)) {
+                    return switchInt(parseInt(bigNum / 10)) + '拾'
+                }
+                return switchInt(parseInt(bigNum / 10)) + '拾' + switchInt(bigNum % 10)
+            } else if (bigNum >= 1E2 && bigNum < 1E3) { // 三位数
+                // 如果是十的倍数
+                if (!(bigNum % 1E2)) {
+                    return switchInt(parseInt(bigNum / 1E2)) + '佰'
+                }
+                // 如果十位数是0
+                if (bigNum % 1E2 < 10) {
+                    return switchInt(parseInt(bigNum / 1E2)) + '佰零' + switchInt(bigNum % 1E2)
+                }
+                return switchInt(parseInt(bigNum / 1E2)) + '佰' + switchInt(bigNum % 1E2)
+            } else if (bigNum >= 1E3 && bigNum < 1E4) { // 四位数
+                if (!(bigNum % 1E3)) {
+                    return switchInt(parseInt(bigNum / 1E3)) + '仟'
+                }
+                // 如果百位数是0
+                if (bigNum % 1E3 < 1E2) {
+                    return switchInt(parseInt(bigNum / 1E3)) + '仟零' + switchInt(bigNum % 1E3)
+                }
+                return switchInt(parseInt(bigNum / 1E3)) + '仟' + switchInt(bigNum % 1E3)
+            } else if (bigNum >= 1E4 && bigNum < 1E5) {
+                if (!(bigNum % 1E4)) {
+                    return switchInt(parseInt(bigNum / 1E4)) + '万'
+                }
+                // 如果千位数是0
+                if (bigNum % 1E4 < 1E2) {
+                    return switchInt(parseInt(bigNum / 1E4)) + '万零' + switchInt(bigNum % 1E4)
+                }
+                return switchInt(parseInt(bigNum / 1E4)) + '万' + switchInt(bigNum % 1E4)
+            } else if (bigNum >= 1E5 && bigNum < 1E6) {
+                if (!(bigNum % 1E5)) {
+                    return switchInt(parseInt(bigNum / 1E5)) + '拾万'
+                }
+                // 如果万位数是0
+                if (bigNum % 1E5 < 1E4) {
+                    return switchInt(parseInt(bigNum / 1E5)) + '拾万零' + switchInt(bigNum % 1E5)
+                }
+                return switchInt(parseInt(bigNum / 1E5)) + '拾万' + switchInt(bigNum % 1E5)
+            } else if (bigNum >= 1E6 && bigNum < 1E7) {
+                if (!(bigNum % 1E6)) {
+                    return switchInt(parseInt(bigNum / 1E6)) + '佰万'
+                }
+                // 如果十万位数是0
+                if (bigNum % 1E6 < 1E5 ) {
+                    return switchInt(parseInt(bigNum / 1E6)) + '佰零' + switchInt(bigNum % 1E6)
+                }
+                return switchInt(parseInt(bigNum / 1E6)) + '佰' + switchInt(bigNum % 1E6)
+            }
+        }
+
+        // 转换小数部分
+        function switchFloat(smallNum) {
+            let numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            let chiArray = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']
+            let ch = ''
+            for (let i = 0; i < smallNum.length; i++) {
+                for (let j = 0; j < numArray.length; j++) {
+                    if (Number(smallNum[i]) === numArray[j]) {
+                        ch += chiArray[j]
+                    }
+                }
+            }
+            return ch
+        }
+
+        function handlerClick() {
+            let inputVal = inputEle.value
+            if (isNaN(inputVal - 0) || inputVal === '') {
+                alert('非法输入！')
+                inputEle.value = ''
+                return false
+            }
+            let test = createAccountingNumber()
+            test.val = inputVal - 0
+            let newEle = document.createElement('div')
+            newEle.innerHTML = test.val
+
+            document.body.appendChild(newEle)
+        }
+
+        function createAccountingNumber() {
+            // 返回一个新的proxy对象
+            return new Proxy({}, {
+                set(obj, prop, val) {
+                    if (typeof val === 'number') {
+                        let res = switchNumToChineseBag(val)
+                        obj[prop] = '￥：' + res
+                    } else {
+                        obj[prop] = val
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

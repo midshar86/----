@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        table{
+            border-spacing: 5px;
+            /* border-collapse: collapse; */
+        }
+        table td{
+            width: 80px;
+            height: 40px;
+            background-color: aqua;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 求得m、n之间的数值和
+        function add_mToN(m, n) {
+            if (typeof (m) === 'number' && typeof (n) === "number" && m <= n) {
+                let computed_total = 0
+                for (let i = m; i <= n; i++) {
+                    computed_total += i
+                }
+                return computed_total
+            } else {
+                throw new Error("invali parameter！")
+            }
+        }
+        console.log(add_mToN(-99, 10))
+
+        // 编写一个函数, 用来创建一个N行M列的表格, 并且每个表格表示 N*M 的数值 
+        function table_create(row, col) {
+            if (typeof (row) !== "number" || typeof (col) !== "number" || row <= 0 || col <= 0) {
+                throw new Error("invalid parameter!")
+            }
+            document.write("<table>")
+            for (let i = 1; i <= row; i++) {
+                document.write("<tr>")
+                for (let j = 1; j <= col; j++) {
+                    document.write(`<td>${j*i}</td>`)
+                }
+                document.write("</tr>")
+            }
+            document.write("</table>")
+        }
+        table_create(5,10)
+
+        // 交换两个数的值
+        function changeNum(numA,numB){
+            numB=numA^numB
+            numA=numA^numB
+            numB=numA^numB
+            console.log(numA,numB)
+        }
+        changeNum(777,888)
+    </script>
+</body>
+
+</html>

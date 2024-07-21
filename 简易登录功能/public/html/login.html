@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><button id="btn">点击测试登录功能</button></p>
+    <p><button id="btn2">点击测试token信息</button></p>
+    <script>
+        let token
+        let btnEle = document.getElementById('btn')
+        let btnEle2 = document.getElementById('btn2')
+
+        async function handlerClick() {
+
+            let option = {
+                method: 'post',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: 1,
+                    username: 'midshar',
+                    password: 123456
+                })
+            }
+            let res = await fetch('http://127.0.0.1:3000/user/login', option)
+
+            let data = await res.json()
+            // 全局存放登录账户后的token信息
+            token = data.token
+            console.log(data)
+        }
+
+        // 设置请求数据
+        async function handlerToken() {
+            let option = {
+                // 免密登录设置请求头, 添加token字段
+                headers: {
+                    'authorization': token
+                }
+            }
+            let res = await fetch('http://127.0.0.1:3000/user/details', option)
+            let data = await res.json()
+            console.log(data)
+        }
+        btnEle.addEventListener('click', handlerClick)
+        btnEle2.addEventListener('click', handlerToken)
+    </script>
+</body>
+
+</html>

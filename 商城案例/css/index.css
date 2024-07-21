@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* 设置分页器位置 */
+#cont{
+    margin: 0 auto;
+    width: fit-content;
+}
+/* 设置搜索框容器 */
+.search-container{
+    width: fit-content;
+    margin: 0 auto;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 3px solid orangered;
+}
+/* 设置输入框样式 */
+.search-container>input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    width: 300px;
+    text-indent: 5px;
+}
+/* 设置搜索按钮样式 */
+.search-container>span{
+    color: white;
+    background-color: orangered;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    cursor: default;
+}
+/* 设置整个商品显示区域 */
+.goods-container{
+    margin: 0 auto;
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* 设置单个商品显示区域 */
+.goods-container>.goodsInfo{
+    width: 200px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #eee;
+}
+/* 设置商品图片的显示大小 */
+.goodsInfo>img{
+    width: 100%;
+}
+/* 设置商品价格样式 */
+.goodsInfo>p:nth-child(2){
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    text-indent: 5px;
+}
+/* 设置商品描述文本样式 */
+.goodsInfo>p:nth-child(3){
+    margin: 5px;
+    line-height: 1.5em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 设置商品的特殊信息区域 */
+.goodsInfo>div{
+    margin: 5px;
+    font-weight: bolder;
+}
+/* 热卖 */
+.goodsInfo>div>span:first-child{
+    color: red;
+}
+/* 折扣 */
+.goodsInfo>div>span:last-child{
+    color: orangered;
+}
+
+/* 设置筛选区域 */
+.filter-container{
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    line-height: 80px;
+    padding: 0 50px;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.filter-container>div{
+    margin: 0 15px;
+}
+
+.filter-container>div>select{
+    height: 25px;
+    width: 80px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    font-size: 12px;
+    margin: 0 10px;
+}

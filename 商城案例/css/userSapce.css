@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #eee;
+}
+.container{
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container>h1{
+    font-size: 20px;
+    align-self: flex-start;
+    font-weight: bold;
+    margin: 20px 0 20px 20px;
+    padding-left: 5px;
+    border-left: 5px solid orange;
+}
+
+.userInfo{
+    background-color: #ddd;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userInfo>.box{
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.box>p{
+    font-size: 16px;
+}
+.box>p>span:first-child{
+    display: inline-block;
+    width: 160px;
+}
+
+.box>p>span:last-child{
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    height: 15px;
+    color: red;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.box>p>span:last-child.show{
+    visibility: visible;
+}
+
+.box>p>input{
+    width: 200px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    outline: none;
+    height: 25px;
+    text-indent: 5px;
+    font-size: 14px;
+}
+.container>p{
+    margin: 10px;
+}
+p>button{
+    background-color: orangered;
+    color: white;
+    border: none;
+    width: 400px;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#warning{
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+#warning.show{
+    visibility: visible;
+}
+#warning>p{
+    width: 400px;
+    height: 200px;
+    background-color: aliceblue;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+#warning>p>span:first-child{
+    line-height: 200px;
+}
+#warning>p>span:last-child{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: snow;
+    padding: 5px;
+    text-align: center;
+    line-height: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}

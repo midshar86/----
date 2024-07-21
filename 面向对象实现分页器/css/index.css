@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.root{
+    margin: 20px;
+}
+.root>.pagebutton{
+    display: inline-block;
+    font-size: 15px;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+.root>.pagebutton:hover{
+    color: blue;
+    text-decoration: underline;
+}
+.root>.pagebutton.active{
+    background-color: #666;
+    color: white;
+}

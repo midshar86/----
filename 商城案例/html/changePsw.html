@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户中心</title>
+    <link rel="stylesheet" href="../css/userSapce.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>密码中心</h1>
+        <div class="userInfo">
+            <div class="box">
+                <p><span>用户名:</span><input disabled type="text" id="username"
+                        data-info=""><span></span>
+                </p>
+            </div>
+            <div class="box">
+                <p>
+                    <span>请输入旧密码:</span><input type="password" id="oldPassword"
+                        data-info="请输入旧密码"><span></span>
+                </p>
+            </div>
+            <div class="box">
+                <p>
+                    <span>请重新输入密码:</span><input type="password" id="password"
+                        data-info="请输入包含英语大小写以及数字的6~12位密码"><span></span>
+                </p>
+            </div>
+            <div class="box">
+                <p>
+                    <span>请再次输入密码:</span><input type="password" id="rePassword" data-info="请再次输入密码"><span></span>
+                </p>
+            </div>
+        </div>
+        <p><button id="changeUserPsw">点击修改用户密码</button></p>
+        <div id="warning">
+            <p><span>信息修改失败！请仔细检查修改信息！</span><span>x</span></p>
+        </div>
+    </div>
+    <script src="../../node_modules/axios/dist/axios.js"></script>
+    <script src="../js/changePsw.js"></script>
+</body>
+
+</html>

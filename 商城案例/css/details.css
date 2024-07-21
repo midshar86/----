@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+img{
+    display: block;
+}
+.logo{
+    width: 600px;
+    margin: 0 auto;
+}
+.logo>img{
+    width: 100%;
+}
+.infos{
+    margin: 0 auto;
+    width: 600px;
+}
+.infos>p:first-child{
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px 0;
+}
+.infos>p:nth-child(2){
+    font-weight: bolder;
+    font-size: 18px;
+    color: orangered;
+}
+.infos>p:nth-child(2).del{
+    font-size: 16px;
+    color: black;
+    text-decoration: line-through;
+}
+.infos>p:nth-child(3).sale{
+    font-weight: bolder;
+    font-size: 18px;
+    color: orangered;
+}
+.infos>div{
+    margin: 20px 0;
+}
+.infos>div>span.hasValue{
+    width: fit-content;
+    background-color: #f10;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.lazyimg{
+    width: 800px;
+    margin: 0 auto;
+}
+.lazyimg img{
+    width: 100%;
+    margin: 15px 0;
+}

@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  .root {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+  }
+  .head,
+  .heads {
+    box-sizing: border-box;
+    height: 60px;
+    background: linear-gradient(to right top, yellowgreen, green);
+    border: 2px dotted white;
+    font-size: 18px;
+    color: white;
+    line-height: 60px;
+    text-align: center;
+    cursor: default;
+  }
+  .heads {
+    background: linear-gradient(to right top, orange, orangered);
+  }
+  .content,
+  .contents {
+    box-sizing: border-box;
+    height: calc(100% - 60px);
+    background-color: grey;
+    border: 2px dotted white;
+  }
+  
+  .box {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+  }
+  

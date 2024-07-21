@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="../stylesheets/register.css">
+</head>
+
+<body>
+    <div id="root">
+        <h1>用户注册</h1>
+        <form action="javascript:void(0)" method="post" id="form">
+            <label for="username">
+                <span>请输入用户名:</span><input type="text" id="username" data-tip="必须以字母开头, 并且由数字、字母与下划线构成, 长度在3-10位数之间">
+                <p></p>
+            </label>
+            <label for="password">
+                <span>请输入用户密码:</span><input type="password" id="password" data-tip="密码必须同时包含数字、小写字母与大写字母, 长度不低于6位数">
+                <p></p>
+            </label>
+            <label for="rpassword">
+                <span>请再次输入用户密码:</span><input type="password" id="rpassword" data-tip="请再次输入密码">
+                <p></p>
+            </label>
+            <label for="nickname">
+                <span>请输入昵称:</span><input type="text" id="nickname" data-tip="昵称中不包含空白字符, 并且至少有一位">
+                <p></p>
+            </label>
+            <label for="age">
+                <span>请输入年龄:</span><input type="number" id="age" data-tip="年龄必须在18-60岁之间">
+                <p></p>
+            </label>
+            <div>
+                <span>请选择性别:</span><label for="male"><input type="radio" id="male" name="gender" value="male">男</label><label
+                    for="female"><input type="radio" id="female" name="gender" value="female">女</label><label for="secret"><input
+                        type="radio" id="secret" name="gender" value="secret" checked>保密</label>
+            </div>
+            <button id="btn">点击注册</button>
+        </form>
+    </div>
+    <div class="tip">
+        <div class="tipinfo"></div>
+        <div class="close">×</div>
+    </div>
+    <script src="../javascripts/register.js"></script>
+</body>
+
+</html>

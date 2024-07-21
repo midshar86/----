@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* 设置登录信息显示容器 */
+.container{
+    height: 350px;
+    box-sizing: border-box;
+    padding-left: 50px;
+    background-color: rgb(230, 195, 130);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+/* 设置登录信息左侧样式 */
+.container>div:first-child{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 15%;
+}
+/* 设置登录信息用户名密码区样式 */
+.container>.loginInfos{
+    height: 300px;
+    width: 350px;
+    margin-right: 150px;
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.loginInfos>div{
+    width: 250px;
+}
+.loginInfos>div>p{
+    font-family: 宋体;
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+/* 设置输入框样式 */
+.loginInfos>div>p>input{
+    box-sizing: border-box;
+    border: 2px solid #eee;
+    height: 25px;
+    width: 100%;
+    text-indent: 5px;
+    outline: none;
+    font-size: 13px;
+    border-radius: 5px;
+}
+.loginInfos>div>p>span{
+    display: inline-block;
+    font-size: 10px;
+    height: 20px;
+    line-height: 20px;
+    font-weight: normal;
+}
+/* 设置显示隐藏按钮 */
+#showOrHidden{
+    vertical-align: sub;
+    outline: none;
+}
+
+/* 设置用户名密码区提示文本样式 */
+.loginInfos>div>p:last-child{
+    font-size: 10px;
+    margin-top: -5px;
+    text-indent: 1em;
+    visibility: hidden;
+    height: 10px;
+}
+.loginInfos>div>p:last-child.focus{
+    color: red;
+    visibility: visible;
+}
+/* 设置登录按钮样式 */
+.loginInfos>p:nth-child(3)>button{
+    margin: 15px 0;
+    background-color: orange;
+    border: none;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    text-align: center;
+    width: 250px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* 设置注册按钮样式 */
+.loginInfos>p:last-child>button{
+    width: 200px;
+    background-color: transparent;
+    color: orangered;
+    border: none;
+    cursor: pointer;
+}
+/* 设置弹窗样式 */
+#warning{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    border: 2px solid snow;
+    visibility: hidden;
+}
+#warning.show{
+    visibility: visible;
+}
+/* 设置弹窗中的提示文本样式 */
+#warning>p{
+    width: 400px;
+    height: 100px;
+    background-color: seashell;
+    text-align: center;
+    line-height: 100px;
+    font-size: 16px;
+    color: black;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+/* 设置关闭弹窗元素样式 */
+#warning>p>span:last-child{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: orange;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: white;
+}

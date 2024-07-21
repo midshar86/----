@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div>欢迎登陆!</div>
+        <div class="loginInfos">
+            <div>
+                <p>请输入用户名:</p>
+                <p><input type="text" id="username" data-info="请输入以英文字母开头的4-8位用户名"></p>
+                <p></p>
+            </div>
+            <div>
+                <p>请输入用户密码:</p>
+                <p><input type="password" id="password" data-info="请输入包含英语大小写以及数字的6~12位密码"><span><input type="checkbox" name="showOrHidden" id="showOrHidden">显示/隐藏密码</span></p>
+                <p></p>
+            </div>
+            <p><button id="login">登录</button></p>
+            <p><button id="register">==注册有惊喜==</button></p>
+        </div>
+    </div>
+    <div id="warning">
+        <p><span>登录失败！请检查登录信息！</span><span>x</span></p>
+    </div>
+    <script src="../../node_modules/axios/dist/axios.js"></script>
+    <script src="../js/login.js" type="module"></script>
+</body>
+</html>

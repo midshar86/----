@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ques1:入职第一年工资10k, 每年涨薪5%, 50年之后工资多少?
+        let salary = 100000
+        let year_after = 1
+        while (year_after <= 50) {
+            salary *= (1 + 0.05)
+            year_after++
+        }
+        console.log(`50年之后的工资为${salary}`)
+
+        // ques2:输出100以内7的倍数
+        let number = 0
+        while (number < 100) {
+            // 利用短路操作实现输出
+            !(number % 7) && console.log(`100以内7的倍数${number}`)
+            number++
+        }
+
+        // ques3: 输出100以内的奇数
+        // 方法一
+        let num = 1
+        let numArray1 = []
+        let numArray2 = []
+        while (num < 100) {
+            // 利用短路操作实现输出
+            num % 2 && numArray1.push(num)
+            num++
+        }
+        console.log(`100以内的奇数${numArray1}`)
+        // 方法二
+        let numx = 1
+        while (numx < 100) {
+            numArray2.push(numx)
+            numx += 2
+        }
+        console.log(`100以内的奇数${numArray2}`)
+
+        // ques4:求和100以内偶数
+        let add_res = 0
+        for (let i = 1; i <= 100; i++) {
+            add_res += (i % 2 === 0 ? i : 0)
+        }
+        console.log(`100以内偶数之和为${add_res}`)
+
+        // ques5:计算10的阶乘
+        let fac_res = 1
+        for (let i = 1; i <= 10; i++) {
+            fac_res *= i
+        }
+        console.log(`10!=${fac_res}`)
+
+        // ques6:求100-999之间的水仙花数
+        for (let i = 100; i <= 999; i++) {
+            // 拆分各个位中的数字
+            let lnum = parseInt(i / 100); //百位
+            let mnum = parseInt(i % 100 / 10); //十位
+            let rnum = parseInt(i % 10); //个位
+            (i === lnum ** 3 + mnum ** 3 + rnum ** 3) && console.log(`${i}是水仙花数`)
+        }
+
+        // 输出20-60数值
+        for (let i = 20; i <= 60; i++) {
+            console.log(`输出数值${i}`)
+        }
+
+        // 假设某人有 100,000 现金。每经过一次路口需要进行一次交费
+        // 交费规则为当他现金大于50,000 时每次需要交5%.
+        // 如果现金小于等于 50,000 时每次交5,000。请写一程序计算此人可以经过多少次这个路口
+        // 方法一, 创建计数器
+        let count = 0 //创建计数器
+        let cash_total = 100000 //初始化金额
+        for (cash_total; cash_total >= 5000;) { //当金额不够5000时退出循环,停止计数
+            // 当金额大于50000时每次递减5%并且计数+1
+            if (cash_total > 50000) {
+                cash_total *= 0.95
+                count++
+            } else {
+                // 当金额小于50000时每次递减5000并且计数+1
+                cash_total -= 5000
+                count++
+            }
+        }
+        console.log(`可以经过${count}次路口`)
+        // 方法二, 不需要创建计数器
+        cash_total = 100000
+        for (let i = 0; true; i++) {
+            if (cash_total < 5000) {
+                console.log(`可以经过${i}次路口`)
+                break;
+            }
+            if (cash_total > 50000) {
+                cash_total *= 0.95;
+            } else {
+                cash_total -= 5000
+            }
+        }
+        // 打印顶点在上部的等腰三角形
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 1; j <= 10; j++) {
+                if (j <= 10 - i) {
+                    document.write("&nbsp;")
+                } else {
+                    document.write("*")
+                }
+            }
+            document.write("<br/>")
+        }
+        // 打印顶点在下部的等腰三角形
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 1; j <= 10; j++) {
+                if (j >= i) {
+                    document.write('*')
+                } else {
+                    document.write('&nbsp;')
+                }
+            }
+            document.write('<br/>')
+        }
+        // 打印直角边在左下的直角三角形
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write('*')
+            }
+            document.write('<br/>')
+        }
+        // 打印直角边在右下的直角三角形
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 10; j >= i; j--) {
+                document.write('*')
+            }
+            document.write('<br/>')
+        }
+
+        // 输出一个九九乘法表
+        for (let i = 1; i < 10; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write(`<span>${j}×${i}=${i*j}</span>`)
+            }
+            document.write('<br>')
+        }
+
+        // 输出一个等腰三角形
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 1; j <= (2 * i - 1); j++) {
+                document.write(`<span>*</span>`)
+            }
+            document.write("<br>")
+        }
+
+        // 输出一个倒立的等腰三角形
+        for (let i = 10; i >= 1; i--) {
+            for (let j = 1; j <= (2 * i - 1); j++) {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        // 打印一个空心的等腰三角形
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 1; j <= (2 * i - 1); j++) {
+                if (i !== 10 && (j === 1 || j === (2 * i - 1))) {
+                    document.write("*")
+                } else if (i === 10) {
+                    document.write("*")
+                } else {
+                    document.write("&nbsp;&nbsp;")
+                }
+            }
+            document.write("<br>")
+        }
+
+        // 打印一个倒立的等腰三角形
+        for (let i = 10; i >= 1; i--) {
+            for (let j = 1; j <= (2 * i - 1); j++) {
+                if (i === 10) {
+                    document.write("*")
+                } else if (j === 1 || j === (2 * i - 1)) {
+                    document.write("*")
+                } else {
+                    document.write("&nbsp;&nbsp;")
+                }
+            }
+            document.write("<br>")
+        }
+
+        // 输出100-200之间的素数
+        for (let m, i = 1; i <= 200; i++) {
+            if (i === 1 || i === 2) {
+                console.log(`${i}是素数`)
+                continue;
+            }
+            if (!(i % 2)) continue; //排除偶数
+            for (m = 2; m <= i / 2; m++) {
+                if (!(i % m)) break;
+            }
+            if (m > i / 2) { //当子循环中的break未被执行时, 表示没有存在数能够被整除, 循环正常退出, 即为素数
+                console.log(`${i}是素数`)
+            }
+        }
+
+        // 百钱买百鸡
+        // 鸡翁一值钱五，鸡母一值钱三，鸡雏三值钱一。百钱买百鸡，问鸡翁、鸡母、鸡雏各几何?
+        {
+            // 定义公鸡、母鸡的数量
+            let i, j
+            // 若全部买公鸡，最多能买20只
+            for (i = 0; i <= 20; i++) {
+                // 若全部买母鸡，最多买33只
+                for (j = 0; j < 34; j++) {
+                    // 定义小鸡的数量
+                    let s=100-i-j
+                    //当满足百钱买百鸡的条件时,输出结果
+                    if (5*i+3*j+s/3===100) {// 判定条件, 购买的金钱总额为100
+                        console.log(`公鸡${i}只共计${i*5}钱,母鸡${j}只共计${j*3}钱,小鸡${s}只共计${s/3}钱`)
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#root {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#head {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 5px;
+    background: radial-gradient(circle farthest-side, #14ebae, #00FFEE);
+    /* background: linear-gradient(to bottom right, #00B7FF, #FFFFC7); */
+    border-bottom: 1px solid skyblue;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 3px #ddd;
+    display: flex;
+}
+
+#head:hover {
+    /* 清除鼠标移到文本上时变为光标的默认样式 */
+    cursor: default;
+}
+
+#head>span {
+    height: 100%;
+    box-sizing: border-box;
+    width: 50px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    text-align: center;
+    flex: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+#head>span.active {
+    border-top: 2px solid orange;
+    border-bottom: 2px solid orange;
+    background-color: rgba(0, 0, 255, 0.1);
+    color: orangered;
+}
+
+#content {
+    position: relative;
+    height: 400px;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 400px;
+}
+
+#content>div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    box-shadow: 2px 1px 5px #ddd;
+}
+
+#content>div:first-child {
+    opacity: 1;
+}

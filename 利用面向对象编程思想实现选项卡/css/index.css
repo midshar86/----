@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.root {
+  width: 600px;
+  margin: 100px auto;
+}
+.root > div:first-child {
+  height: 40px;
+  background: radial-gradient(circle farthest-side, orange, orangered);
+  color: white;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  display: flex;
+}
+.root > div:first-child > span {
+  flex: 1;
+  transition: all 0.5s ease-in-out;
+}
+.root > div:first-child > span:hover {
+  background-color: rgb(255, 255, 255, 0.4);
+}
+.root > div:first-child > span:active {
+  color: red;
+}
+.root > div:first-child > span.active {
+  background-color: gold;
+}
+.root > div:last-child {
+  margin: 15px 0px;
+  position: relative;
+  height: 400px;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 400px;
+}
+.root > div:last-child > div {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  top: 0;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.root > div:last-child > div:first-child {
+  background-color: skyblue;
+}
+.root > div:last-child > div:nth-child(2) {
+  background-color: green;
+}
+.root > div:last-child > div:nth-child(3) {
+  background-color: seashell;
+}
+.root > div:last-child > div:nth-child(4) {
+  background-color: darkorange;
+}
+.root > div:last-child > div.active {
+  opacity: 1;
+}

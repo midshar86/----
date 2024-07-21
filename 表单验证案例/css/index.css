@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#root{
+    width: 600px;
+    margin: 50px auto;
+}
+#root>#register>div:first-child{
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+#register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#register>div{
+    width: 70%;
+}
+div>input{
+    outline: none;
+    border: 2px solid orange;
+    background-color: transparent;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    text-indent: 1em;
+    font-size: 14px;
+}
+div>label{
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    margin: 5px 0px 15px 0px;
+    color: #888;
+    visibility: hidden;
+}
+#clickTo{
+    width: 70%;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: orange;
+    border: none;
+    border-radius: 10px;
+}
+#tip{
+    width: 400px;
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    flex-direction: column;
+    left: 50%;
+    top: 30%;
+    margin-left: -200px;
+    background-color: azure;
+    visibility: hidden;
+    font-size: 16px;
+}
+#tip>p>span{
+    display: inline-block;
+    margin: 0 40px;
+    padding: 5px 10px;
+    background-color: skyblue;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid #ccc;
+}

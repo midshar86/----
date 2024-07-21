@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.light {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 25px;
+  background-color: grey;
+}
+
+.btn {
+  background-color: skyblue;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  margin: 25px;
+  color: white;
+}

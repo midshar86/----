@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    height: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right top,#93278F ,#00A99D);
+}
+
+h1{
+    width: 50%;
+    background: linear-gradient(to right top,#00B7FF ,#FFFFC7);
+    color: transparent;
+    background-clip: text;
+    font-size: 150px;
+    text-align-last: justify;
+}

@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: linear-gradient(to right,#051937,#1e375c);
+}
+p{
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    background: linear-gradient(to right top,#008080b7,#3eb489cb);
+    box-shadow: 0px 5px 10px rgb(39, 85, 110);
+}
+p>input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #006D5B;
+    font-size: 18px;
+    margin: 0 25px;
+    text-align: center;
+    color: #7FFFD4;
+}
+p>button{
+    background-color: orange;
+    border: none;
+    outline: none;
+    width: 60px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+button:active{
+    color: black;
+}
+button:hover{
+    background-color: rgb(202, 131, 0);
+}
+ol{
+    margin: 10px 0;
+}
+ol>li{
+    margin-left: 40px;
+    line-height: 25px;
+    color: aqua;
+    font-size: 18px;
+}
+li>button{
+    background-color: orange;
+    height: 25px;
+    padding: 0 8px;
+    margin: 0 10px;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+}

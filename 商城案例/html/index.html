@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物商城</title>
+    <link rel="stylesheet" href="../css/pager.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div class="search-container">
+        <input type="text"><span>搜索</span>
+    </div>
+    <div class="filter-container">
+        请设置筛选条件:
+
+        <div>
+            折扣/热销:
+            <select name="isSaleOrHot" id="isSaleOrHot">
+                <option value="" selected>无</option>
+                <option value="sale">折扣</option>
+                <option value="hot">热销</option>
+            </select>
+        </div>
+        <div>
+            折扣数量:
+            <select name="saleNum" id="saleNum">
+                <option value="10" selected>无</option>
+                <option value="5">五折</option>
+                <option value="6">六折</option>
+                <option value="7">七折</option>
+                <option value="8">八折</option>
+                <option value="9">九折</option>
+            </select>
+        </div>
+        <div>
+            排序依据:
+            <select name="sortType" id="sortType">
+                <option value="id-ASC" selected>id正序</option>
+                <option value="id-DESC">id倒序</option>
+                <option value="sale-ASC">销量正序</option>
+                <option value="sale-DESC">销量倒序</option>
+                <option value="price-ASC">价格正序</option>
+                <option value="price-DESC">价格倒序</option>
+            </select>
+        </div>
+        <div>
+            选择商品类别:
+            <select name="goodsType" id="goodsType">
+                <option value="" selected>所有商品</option>
+            </select>
+        </div>
+    </div>
+    <div class="goods-container"></div>
+    <div id="cont"></div>
+    <script src="../../node_modules/axios/dist/axios.js"></script>
+    <script src="../js/index.js" type="module"></script>
+</body>
+
+</html>
